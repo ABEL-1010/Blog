@@ -3,11 +3,24 @@ import { Twitter, Facebook, Instagram } from "lucide-react";
 import BlogCard from "../../components/blog/BlogCard";
 import api from "../../api/axios";
 import profile from "../../assets/pro.jpg"
+import photo from"../../assets/aa (1).png"
+import pic from"../../assets/aa (2).png"
+import image from"../../assets/aa (3).png"
 
 export default function BlogListingPage() {
   const [blogs, setBlogs] = useState([]);
   const [featured, setFeatured] = useState(null);
   const [loading, setLoading] = useState(true);
+  const galleryImages = [
+  photo,
+  pic,
+  image,
+  profile,
+  photo,
+  pic,
+  image,
+  profile,
+];
 
   useEffect(() => {
     api.get("/posts")
@@ -84,21 +97,51 @@ export default function BlogListingPage() {
             ))}
           </div>
 
-         
-
+        
           {/* Gallery */}
+        <div className="space-y-3">
           <h3 className="text-lg font-semibold">Gallery</h3>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-            {Array.from({ length: 6 }).map((_, idx) => (
-              <div key={idx} className="w-full h-full bg-gray-200 overflow-hidden">
+
+          {/* Row 1 – 2 images */}
+          <div className="grid grid-cols-2 gap-2">
+            {galleryImages.slice(0, 2).map((img, idx) => (
+              <div key={idx} className="h-40 overflow-hidden rounded-md">
                 <img
-                  src={`https://placehold.co/400x300?text=Image+${idx + 1}`}
-                  alt={`Gallery ${idx + 1}`}
+                  src={img}
+                  alt={`Gallery ${idx}`}
                   className="w-full h-full object-cover"
                 />
               </div>
             ))}
           </div>
+
+          {/* Row 2 – 3 images */}
+          <div className="grid grid-cols-3 gap-2">
+            {galleryImages.slice(2, 5).map((img, idx) => (
+              <div key={idx} className="h-32 overflow-hidden rounded-md">
+                <img
+                  src={img}
+                  alt={`Gallery ${idx}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Row 3 – 3 images */}
+          <div className="grid grid-cols-3 gap-2">
+            {galleryImages.slice(5, 8).map((img, idx) => (
+              <div key={idx} className="h-32 overflow-hidden rounded-md">
+                <img
+                  src={img}
+                  alt={`Gallery ${idx}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
         </aside>
         
       </section>
