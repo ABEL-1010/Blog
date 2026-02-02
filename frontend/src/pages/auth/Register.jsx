@@ -38,7 +38,7 @@ export default function Register() {
     localStorage.setItem("user", JSON.stringify(response.user));
 
     // Redirect to home page or dashboard
-    navigate("/");
+    navigate("/user");
   } catch (err) {
     console.error(err);
     if (err.response?.data?.message) {
