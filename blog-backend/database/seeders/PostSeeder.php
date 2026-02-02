@@ -1,0 +1,38 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use App\Models\Post;
+use App\Models\Category;
+use App\Models\User;
+use Illuminate\Support\Str;
+
+class PostSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $admin = User::where('email', 'admin@example.com')->first();
+        $category = Category::first();
+
+        Post::create([
+            'title' => 'Welcome to the Blog',
+            'slug' => Str::slug('Welcome to the Blog'),
+            'content' => 'This is a sample blog post seeded into the database.',
+           // 'image' => 'https://placehold.co/600x400/png',
+            'status' => 'published',
+            'user_id' => $admin->id,
+            'category_id' => $category->id,
+        ]);
+
+        Post::create([
+            'title' => 'Building Smart Cities with Data',
+            'slug' => Str::slug('Building Smart Cities with Data'),
+            'content' => 'Smart cities rely on data-driven decision making.',
+          //  'image' => 'https://placehold.co/800x500/jpg',
+            'status' => 'published',
+            'user_id' => $admin->id,
+            'category_id' => $category->id,
+        ]);
+    }
+}
