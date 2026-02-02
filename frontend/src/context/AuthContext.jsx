@@ -84,12 +84,13 @@ export const AuthProvider = ({ children }) => {
       setUser(null);
     }
   };
+  
 
   return (
     <AuthContext.Provider
       value={{
         user,
-        isAuthenticated: !!user,
+        isAuthenticated: !!user && !!localStorage.getItem("token"),
         isAdmin: user?.role === "admin",
         login,
         register,
