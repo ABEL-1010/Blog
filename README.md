@@ -17,7 +17,7 @@ It provides authentication, role-based access control, and CRUD functionality fo
 - Vite
 - Axios
 - React Router
-- Tailwind CSS (if used)
+- Tailwind CSS
 
 ---
 
