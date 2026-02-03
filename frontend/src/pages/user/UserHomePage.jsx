@@ -5,6 +5,9 @@ const UserHomePage = () => {
             <h1 className="text-black text-4xl md:text-6xl font-extrabold tracking-wide">
              GET INFORMED
             </h1>
+            <h1 className="text-black text-4xl md:text-6xl font-extrabold tracking-wide mt-2">
+                GET INSPIRED
+            </h1>
         </div>
     )
 }
