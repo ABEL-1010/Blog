@@ -38,7 +38,7 @@ const UserHeader = () => {
 
             <NavLink
               to="/search"
-              className="text-white/400 hover:text-black transition"
+              className="px-3 py-1 rounded-full border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-purple-200"
             >
               Search
             </NavLink>

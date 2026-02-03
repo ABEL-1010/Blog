@@ -1,12 +1,15 @@
+
 const HomePage = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center text-center px-4 relative">
-      <h1 className="text-black text-4xl md:text-6xl font-extrabold tracking-wide">
+      <div className="text-black text-4xl hover:text-purple-700 md:text-6xl font-extrabold">
+        <h1 className=" tracking-wide">
         GET INFORMED
-      </h1>
-      <h1 className="text-black text-4xl md:text-6xl font-extrabold tracking-wide mt-2">
+        </h1>
+        <h1 className="tracking-wide mt-2">
         GET INSPIRED
-      </h1>
+        </h1>
+       </div> 
       {/* underline */}
       <div className="w-64 h-1 bg-purple-700 my-6"></div>
       <p className="text-gray-700 text-lg md:text-xl max-w-xl">
