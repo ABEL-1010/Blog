@@ -7,16 +7,18 @@ import UserLandingPage from "./pages/user/UserLandingPage";
 import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login.jsx";
 import ProtectedRoute from "./routes/ProtectedRoute.jsx";
+import BlogWritingPage from "./pages/user/BlogWriting.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          {/* Public Routes */}
+
+          {/* Auth */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          
+
           {/* Public Layout */}
           <Route element={<PublicLayout />}>
             <Route path="/" element={<PublicLandingPage />} />
@@ -31,8 +33,13 @@ function App() {
               </ProtectedRoute>
             }
           >
+            {/* /user */}
             <Route index element={<UserLandingPage />} />
+
+            {/* /user/write ✅ */}
+            <Route path="write" element={<BlogWritingPage />} />
           </Route>
+
         </Routes>
       </AuthProvider>
     </BrowserRouter>

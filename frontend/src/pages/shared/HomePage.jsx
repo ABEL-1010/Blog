@@ -1,23 +1,45 @@
-
+import ideas from "../../assets/Homepage_ideas.png"
+import right from "../../assets/right_side.png"
 const HomePage = () => {
   return (
+    
+    
     <div className="min-h-screen bg-white flex flex-col items-center justify-center text-center px-4 relative">
-      <div className="text-black text-4xl hover:text-purple-700 md:text-6xl font-extrabold">
-        <h1 className=" tracking-wide">
-        GET INFORMED
-        </h1>
-        <h1 className="tracking-wide mt-2">
-        GET INSPIRED
-        </h1>
-       </div> 
-      {/* underline */}
-      <div className="w-64 h-1 bg-purple-700 my-6"></div>
-      <p className="text-gray-700 text-lg md:text-xl max-w-xl">
-        Stories Curated For You
-      </p>
-      <button className="mt-6 bg-purple-700 hover:bg-purple-700 transition text-white px-10 py-3 rounded-md font-semibold text-lg">
-        Sign up
-      </button>
+      
+      <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl w-full mx-auto">
+
+        {/* LEFT: LARGE IMAGE */}
+        <div className="flex-1 flex justify-center">
+          <img
+            src={ideas}
+            alt="Illustration"
+            className="w-full max-w-md md:max-w-lg object-contain rounded-full"
+          />
+        </div>
+
+        {/* RIGHT: TEXT CONTENT */}
+        <div className="text-center text-black hover:text-purple-700">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide">
+            GET INFORMED
+          </h1>
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide mt-2">
+            GET INSPIRED
+          </h1>
+
+          {/* underline */}
+          <div className="w-68 h-1 bg-purple-700 my-6 justify-center mx-20"></div>
+
+          <p className="text-gray-700 text-lg md:text-xl max-w-xl">
+            Stories Curated For You
+          </p>
+
+          <button className="mt-6 bg-purple-700 hover:bg-purple-800 transition text-white px-10 py-3 rounded-md font-semibold text-lg">
+            Sign up
+          </button>
+        </div>
+
+      </div>
+
 
       {/* Categories */}
 

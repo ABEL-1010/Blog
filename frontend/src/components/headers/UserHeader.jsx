@@ -44,7 +44,7 @@ const UserHeader = () => {
             </NavLink>
 
             <NavLink
-              to="/write"
+              to="/user/write"
               className="text-black transition"
             >
               Write
