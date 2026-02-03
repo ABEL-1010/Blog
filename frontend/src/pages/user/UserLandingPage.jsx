@@ -1,10 +1,10 @@
 import BlogListingPage from "../shared/BlogListingPage";
-import HomePage from "../shared/HomePage.jsx"
+import UserHomePage from "./UserHomePage"
 
 export default function UserLandingPage() {
   return (
     <>
-      <HomePage />
+      <UserHomePage />
       <BlogListingPage />
     </>
   );
