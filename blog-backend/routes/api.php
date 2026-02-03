@@ -3,6 +3,7 @@
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,8 @@ Route::middleware('auth:sanctum')->group(function () {
     // Categories (read-only for users)
     Route::get('/categories', [CategoryController::class, 'index']);
 });
+
+Route::middleware('auth:sanctum')->post('/upload', [UploadController::class, 'store']);
 
 /*
 
